@@ -85,8 +85,7 @@ button {
 .nav-site .link:hover,
 .nav-site .link:focus,
 .contact-header .link:hover,
-.contact-header .link:focus,
-.nav-site .link.current {
+.contact-header .link:focus {
 	color: var(--accent-color);
 }
 
@@ -102,6 +101,9 @@ button {
 	font-size: 26px;
 	line-height: 1.19;
 	color: var(--logo-color-text);
+	transition-property: color;
+	transition-duration: 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .logo-accent {
 	color: var(--accent-color);
@@ -126,8 +128,24 @@ button {
 	line-height: 1.14;
 	letter-spacing: 0.02em;
 	color: var(--title-text-color);
+	transition-property: color;
+	transition-duration: 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-
+.nav-site .link.current {
+	color: var(--accent-color);
+	position: relative;
+}
+.nav-site .link.current::after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 4px;
+	left: 0;
+	bottom: 0;
+	background: #2196f3;
+	border-radius: 2px;
+}
 /*--- contact header ---*/
 .contact-header {
 	display: flex;
@@ -142,6 +160,9 @@ button {
 	color: var(--text-color);
 	display: flex;
 	gap: 10px;
+	transition-property: color;
+	transition-duration: 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .icon-mail {
@@ -193,6 +214,9 @@ button {
 	align-items: center;
 	text-align: center;
 	background-color: var(--accent-color);
+	transition-property: background-color;
+	transition-duration: 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .hero-btn:hover,
 .hero-btn:focus {
@@ -246,6 +270,23 @@ button {
 	gap: 30px;
 }
 
+.works-item {
+	position: relative;
+}
+.works-dscr {
+	font-weight: 700;
+	width: 100%;
+	bottom: 0;
+	padding-top: 27px;
+	padding-bottom: 27px;
+	line-height: 16px;
+	text-align: center;
+	position: absolute;
+	text-transform: uppercase;
+	background: rgba(47, 48, 58, 0.8);
+	color: #ffffff;
+}
+
 /* -------- OUR TEAM ------ */
 .section.team {
 	background-color: var(--secondary-color);
@@ -293,6 +334,9 @@ button {
 	height: 44px;
 	border-radius: 50%;
 	color: var(--icon-color);
+	transition-property: background-color, color;
+	transition-duration: 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .team-social-link:hover,
 .team-social-link:focus {
@@ -317,6 +361,9 @@ button {
 	border: 1px solid var(--icon-color);
 	border-radius: 4px;
 	color: var(--icon-color);
+	transition-property: color, border-color;
+	transition-duration: 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-pic-link:hover,
@@ -348,14 +395,23 @@ button {
 }
 .adress-list .link {
 	color: var(--footer-text-color);
+	transition-property: color;
+	transition-duration: 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .adress.link {
 	color: var(--main-color);
+	transition-property: color;
+	transition-duration: 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer .logo {
 	display: inline-block;
 	margin-bottom: 20px;
 	color: var(--main-color);
+	transition-property: color;
+	transition-duration: 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-invite {
@@ -380,6 +436,9 @@ button {
 	background-color: rgba(255, 255, 255, 0.1);
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	color: var(--main-color);
+	transition-property: background-color, color;
+	transition-duration: 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-social-link:hover,
 .footer-social-link:focus {
@@ -411,7 +470,11 @@ button {
 	border: none;
 	border-radius: 4px;
 	cursor: pointer;
+	transition-property: background-color, color;
+	transition-duration: 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .filter-btn:first-child {
 	padding-left: 25px;
 	padding-right: 25px;
@@ -450,8 +513,98 @@ button {
 
 .portfolio-link {
 	display: block;
+	box-shadow: none;
+	transition-property: box-shadow;
+	transition-duration: 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .portfolio-link:hover,
 .portfolio-link:focus {
 	box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.portfolio-img {
+	position: relative;
+	overflow: hidden;
+}
+.portfolio-text {
+	position: absolute;
+	min-width: 322px;
+
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 28px;
+
+	letter-spacing: 0.03em;
+	color: #fff;
+}
+
+.portfolio-overlay {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
+	background-color: rgba(33, 150, 243, 0.9);
+	color: #fff;
+	transform: translateY(101%);
+	transition-property: transform;
+	transition-duration: 250ms;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.portfolio-link:hover .portfolio-overlay {
+	transform: translateY(0);
+}
+/* ---------MODAL WINDOW-------- */
+.backdrop {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.2);
+	opacity: 1;
+
+	transition-property: opacity;
+	transition-duration: 500ms;
+	transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.modal {
+	position: absolute;
+	width: 528px;
+	height: 581px;
+	background: #ffffff;
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	opacity: 1;
+	transition-property: opacity;
+	transition-duration: 500ms;
+	transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.btn-close {
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	padding: 0;
+	width: 30px;
+	height: 30px;
+
+	background-color: inherit;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.backdrop.is-hidden {
+	opacity: 0;
+	pointer-events: none;
 }
