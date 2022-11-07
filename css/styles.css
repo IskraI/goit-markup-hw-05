@@ -271,13 +271,15 @@ button {
 .works-dscr {
 	position: absolute;
 	bottom: 0;
-	padding-top: 27px;
-	padding-bottom: 27px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 70px;
 	width: 100%;
 	font-weight: 700;
 	line-height: 16px;
 	text-align: center;
-	color: #ffffff;
+	color: var(--main-color);
 	text-transform: uppercase;
 	background: rgba(47, 48, 58, 0.8);
 }
@@ -351,15 +353,14 @@ button {
 	align-items: center;
 	width: 170px;
 	height: 92px;
-	border: 1px solid var(--icon-color);
+	border: 1px solid currentColor;
 	border-radius: 4px;
 	color: var(--icon-color);
-	transition: border-color 250ms var(--cubic), color 250ms var(--cubic);
+	transition: color 250ms var(--cubic);
 }
 
 .clients-pic-link:hover,
 .clients-pic-link:focus {
-	border-color: var(--accent-color);
 	color: var(--accent-color);
 }
 .clients-icon {
@@ -454,7 +455,8 @@ button {
 	border: none;
 	border-radius: 4px;
 	cursor: pointer;
-	transition: background-color 250ms var(--cubic), color 250ms var(--cubic);
+	/* box-shadow: none; */
+	transition: background-color 250ms var(--cubic), color 250ms var(--cubic), box-shadow 250ms var(--cubic);
 }
 
 .filter-btn:first-child {
@@ -583,14 +585,14 @@ button {
 	padding: 0;
 	width: 30px;
 	height: 30px;
-
+	color: var(--icon-color);
 	background-color: inherit;
-	border: 1px solid rgba(0, 0, 0, 0.1);
+	border: 1px solid currentColor; /* rgba(0, 0, 0, 0.1) */
 	border-radius: 50%;
+	transition: color 250ms var(--cubic);
 }
 .btn-close:hover,
 .btn-close:focus {
-	border: 1px solid var(--accent-color);
 	color: var(--accent-color);
 }
 .close-icon {
